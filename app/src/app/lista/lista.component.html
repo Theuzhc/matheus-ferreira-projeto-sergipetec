@@ -1,0 +1,53 @@
+<div class="card">
+    <div class="card-header">
+        <div class="float-left">
+            Listagem de Contribuintes
+        </div>
+        <div >
+            <button mat-button class="btn btn-success mb-1 btn-sm float-right">+</button>
+        </div>
+    </div>
+
+    <div class="card-body table-responsive">
+        <table class="table">
+            <thead class="table-light">
+                <tr>
+                    <td>#</td>
+                    <td>Nome</td>
+                    <td>E-mail</td>
+                    <td>CPF</td>
+                    <td>Telefone</td>
+                    <td>Celular</td>
+                </tr>
+            </thead>
+            <tr *ngFor=" let contribuinte of contribuintes">
+                <td> {{contribuinte.id}}</td>
+                <td>{{contribuinte.nome}}</td>
+                <td>{{contribuinte.email}}</td>
+                <td>{{contribuinte.cpf}}</td>
+                <td>{{contribuinte.telefone}}</td>
+                <td>{{contribuinte.celular}}</td>
+                <td >
+                     
+                    <table  >
+                        <tr >
+                            <td>{{contribuinte.enderecos.numero}}</td>
+                        </tr>
+                        <!-- "rua": "João Ribeiro",
+        "numero": "1003",
+        "bairro": "Cardoso",
+        "cidade": "Joinville",
+        "cep": "09530210",
+        "estado": "Santa Catarina",
+        "pais": "Brasil" -->
+                    </table>
+                </td>
+                <!-- <td>{{contribuinte.enderecos[0]}}</td> -->
+            </tr>
+        </table>  
+
+        
+            
+  
+    </div>
+</div>
