@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ContribuintesService } from '../contribuintes.service';
 import { Contribuinte } from './contribuintes';
 
@@ -22,10 +23,14 @@ export class ListaComponent implements OnInit {
   
   contribuintes: Contribuinte[] | undefined;
   constructor(private service: ContribuintesService) { }
+
+  contribuinte$: Observable<Contribuinte[]> | undefined
  
   ngOnInit(): void {
-    this.service.listar().
-    subscribe(dados => this.contribuintes = dados);
+    // this.service.listar().
+    // subscribe(dados => this.contribuintes = dados);
+
+    this.contribuinte$ = this.service.listar()
   }
 
 

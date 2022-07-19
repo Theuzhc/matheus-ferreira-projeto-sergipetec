@@ -20,7 +20,7 @@
                     <td>Celular</td>
                 </tr>
             </thead>
-            <tr *ngFor=" let contribuinte of contribuintes">
+            <tr *ngFor=" let contribuinte of contribuinte$ | async">
                 <td> {{contribuinte.id}}</td>
                 <td>{{contribuinte.nome}}</td>
                 <td>{{contribuinte.email}}</td>

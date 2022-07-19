@@ -1,0 +1,44 @@
+<form class="row needs-validation" novalidate [formGroup]="form">
+  <div class="col-sm-4">
+    <label for="nome" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="nome" 
+    placeholder="Digite o nome" formControlName="nome" [ngClass]=" { 'is-invalid' : submitted && hasError('nome') }"
+    formControlName="nome" />
+    <div class="invalid-feedback">Digite um nome válido.</div>
+  </div>
+  <div class="col-sm-4">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control" id="email" placeholder="Digite o e-mail" formControlName="email"
+    [ngClass]=" { 'is-invalid' : submitted && hasError('email') }"/>
+    <div class="invalid-feedback">Digite um e-mail válido.</div>
+  </div>
+  <div class="col-sm-4">
+    <label for="cpf" class="form-label">CPF</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cpf"
+        placeholder="CPF"
+        formControlName="cpf"
+        [ngClass]=" { 'is-invalid' : submitted && hasError('cpf') }"
+      />
+      <div class="invalid-feedback">Digite um CPF válido.</div>
+  </div>
+  <div class="col-sm-6">
+    <label for="telefone" class="form-label">Telefone</label>
+    <input type="tel" class="form-control" id="telefone" placeholder="Digite o telefone" formControlName="telefone"
+    [ngClass]=" { 'is-invalid' : submitted && hasError('telefone') }"    />
+    <div class="invalid-feedback">Digite um telefone válido.</div>
+  </div>
+  <div class="col-sm-6">
+    <label for="celular" class="form-label">Celular</label>
+    <input type="tel" class="form-control" placeholder="Digite o celular" id="celular" formControlName="celular"
+    [ngClass]=" { 'is-invalid' : submitted && hasError('celular') }"    />
+
+    <div class="invalid-feedback">Digite um celular válido.</div>
+  </div>
+  <div class="col-12 ">
+    <button class="btn btn-primary" type="button" (click)="onSubmit()">Enviar</button>
+    <button class="btn btn-danger" type="button" (click)="onCancel()">Cancelar</button>
+  </div>
+</form>

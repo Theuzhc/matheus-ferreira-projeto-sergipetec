@@ -12,13 +12,17 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {  HttpClientModule } from '@angular/common/http';
+import { ContribuintesFormComponent } from './contribuintes-form/contribuintes-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastrarComponent,
     HomeComponent,
-    ListaComponent
+    ListaComponent,
+    ContribuintesFormComponent, 
+    
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,7 @@ import {  HttpClientModule } from '@angular/common/http';
     MatSliderModule,
     MatButtonModule,
     MatTableModule,
+    ReactiveFormsModule,
     routing
   ],
   providers: [],
