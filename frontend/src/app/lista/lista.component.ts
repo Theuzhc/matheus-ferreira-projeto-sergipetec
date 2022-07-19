@@ -27,8 +27,6 @@ export class ListaComponent implements OnInit {
   contribuinte$: Observable<Contribuinte[]> | undefined
  
   ngOnInit(): void {
-    // this.service.listar().
-    // subscribe(dados => this.contribuintes = dados);
 
     this.contribuinte$ = this.service.listar()
   }

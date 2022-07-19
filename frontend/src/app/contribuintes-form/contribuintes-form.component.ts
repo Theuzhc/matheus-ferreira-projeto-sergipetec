@@ -2,6 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContribuintesService } from '../contribuintes.service';
 
+export interface Endereco {
+  rua: String,
+  numero: Number,
+  bairro: String,
+  cidade: String,
+  cep: Number,
+  estado: String,
+  pais: String,
+}
 
 @Component({
   selector: 'app-contribuintes-form',
