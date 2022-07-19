@@ -7,16 +7,17 @@
         class="btn btn-primary mb-1 btn-sm float-right"
         [routerLink]="['/cadastrar']"
         routerLinkActive="active"
+        title="Cadastrar Contribuinte"
       >
-        +
+        <i class="bi bi-person-plus"></i>
       </button>
     </div>
   </div>
 
   <div class="card-body table-responsive">
-    <table class="table">
+    <table class="table table-hover align-middle">
       <thead class="table-light">
-        <tr>
+        <tr class="text-center">
           <td>#</td>
           <td>Nome</td>
           <td>E-mail</td>
@@ -24,6 +25,7 @@
           <td>Telefone</td>
           <td>Celular</td>
           <td>Endereço</td>
+          <td>Ações</td>
         </tr>
       </thead>
       <tr *ngFor="let contribuinte of contribuinte$ | async">
@@ -46,9 +48,27 @@
         "estado": "Santa Catarina",
         "pais": "Brasil" -->
         </td>
-        <td>
-          <button mat-button class="btn btn-warning">Alterar</button>
-          <button mat-button class="btn btn-danger ">Remover</button>
+        <td class="p-0 text-center">
+          <div class="p-0">
+            <button
+              mat-button
+              type="button"
+              class="btn btn-warning rounded"
+              title="Alterar Contribuinte"
+              [routerLink]="['/editar/{{contribuinte.id}}']"
+            >
+              <i class="bi bi-pencil"></i>
+              <!-- Falta editar e remover o usuário -->
+            </button>
+            <button
+              mat-button
+              type="button"
+              class="btn btn-danger rounded"
+              title="Remover Contribuinte"
+            >
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
         </td>
         <!-- <td>{{contribuinte.enderecos[0]}}</td> -->
       </tr>
