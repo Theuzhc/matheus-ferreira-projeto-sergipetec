@@ -1,9 +1,8 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { catchError, empty, Observable } from 'rxjs';
+import { Component, OnInit} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ContribuintesService } from '../contribuintes.service';
 import { Contribuinte } from './contribuintes';
-// import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal'
 
 export interface Endereco {
   rua: String;
@@ -21,13 +20,11 @@ export interface Endereco {
   styleUrls: ['./lista.component.css'],
 })
 export class ListaComponent implements OnInit {
-  // modalRef?: BsModalRef;
   message?: string;
 
   contribuintes: Contribuinte[] | undefined;
   constructor(
     private service: ContribuintesService,
-    // private modalService: BsModalService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
@@ -51,20 +48,10 @@ export class ListaComponent implements OnInit {
       error: (error) => console.log(error),
     });
 
-    // this.modalRef = this.modalService.show(template, {class: 'modal-sm'})
   }
 
   onRefresh() {
     window.location.reload();
   }
 
-  confirm(): void {
-    // this.message = 'Confirmed!';
-    // this.modalRef?.hide();
-  }
-
-  decline(): void {
-    // this.message = 'Declined!';
-    // this.modalRef?.hide();
-  }
 }

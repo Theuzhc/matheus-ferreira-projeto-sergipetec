@@ -29,8 +29,6 @@ export class ContribuintesService {
   }
 
   remove(id : Number) {
-    console.log('apagar');
-    
     return this.http.delete(`${this.API}/${id}`).pipe(take(1))
   }
 }
