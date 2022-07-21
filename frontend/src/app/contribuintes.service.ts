@@ -16,7 +16,21 @@ export class ContribuintesService {
     return this.http.get<Contribuinte[]>(this.API)
   }
 
-  criar( curso: any) {
-    return this.http.post(this.API, curso).pipe(take(1))
+  editarId(id: Number){
+    return this.http.get(`${this.API}/${id}`).pipe(take(1))
+  }
+
+  criar( contribuinte: any) {
+    return this.http.post(this.API, contribuinte).pipe(take(1))
+  }
+
+  update(contribuinte : any){
+    return this.http.put(`${this.API}/${contribuinte.id}`, contribuinte).pipe(take(1))
+  }
+
+  remove(id : Number) {
+    console.log('apagar');
+    
+    return this.http.delete(`${this.API}/${id}`).pipe(take(1))
   }
 }

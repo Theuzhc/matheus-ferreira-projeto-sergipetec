@@ -1,44 +1,159 @@
-<form class="row needs-validation" novalidate [formGroup]="form">
+<form class="row needs-validation mt-3 mb-3" novalidate [formGroup]="form">
   <div class="col-sm-4">
     <label for="nome" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="nome" 
-    placeholder="Digite o nome" formControlName="nome" [ngClass]=" { 'is-invalid' : submitted && hasError('nome') }"
-    formControlName="nome" />
+    <input
+      type="text"
+      class="form-control"
+      id="nome"
+      placeholder="Digite o nome"
+      formControlName="nome"
+      [ngClass]="{ 'is-invalid': submitted && hasError('nome') }"
+      formControlName="nome"
+    />
     <div class="invalid-feedback">Digite um nome válido.</div>
   </div>
   <div class="col-sm-4">
     <label for="email" class="form-label">E-mail</label>
-    <input type="email" class="form-control" id="email" placeholder="Digite o e-mail" formControlName="email"
-    [ngClass]=" { 'is-invalid' : submitted && hasError('email') }"/>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      email="true"
+      placeholder="Digite o e-mail"
+      formControlName="email"
+      [ngClass]="{ 'is-invalid': submitted && hasError('email') }"
+    />
     <div class="invalid-feedback">Digite um e-mail válido.</div>
   </div>
   <div class="col-sm-4">
     <label for="cpf" class="form-label">CPF</label>
-      <input
-        type="text"
-        class="form-control"
-        id="cpf"
-        placeholder="CPF"
-        formControlName="cpf"
-        [ngClass]=" { 'is-invalid' : submitted && hasError('cpf') }"
-      />
-      <div class="invalid-feedback">Digite um CPF válido.</div>
+    <input
+      type="number"
+      class="form-control"
+      id="cpf"
+      placeholder="Digite o CPF"
+      formControlName="cpf"
+      [ngClass]="{ 'is-invalid': submitted && hasError('cpf') }"
+    />
+    <div class="invalid-feedback">Digite um CPF válido.</div>
   </div>
   <div class="col-sm-6">
     <label for="telefone" class="form-label">Telefone</label>
-    <input type="tel" class="form-control" id="telefone" placeholder="Digite o telefone" formControlName="telefone"
-    [ngClass]=" { 'is-invalid' : submitted && hasError('telefone') }"    />
+    <input
+      type="number"
+      class="form-control"
+      id="telefone"
+      placeholder="Digite o telefone"
+      formControlName="telefone"
+      [ngClass]="{ 'is-invalid': submitted && hasError('telefone') }"
+    />
     <div class="invalid-feedback">Digite um telefone válido.</div>
   </div>
   <div class="col-sm-6">
     <label for="celular" class="form-label">Celular</label>
-    <input type="tel" class="form-control" placeholder="Digite o celular" id="celular" formControlName="celular"
-    [ngClass]=" { 'is-invalid' : submitted && hasError('celular') }"    />
+    <input
+      type="tel"
+      class="form-control"
+      placeholder="Digite o celular"
+      id="celular"
+      formControlName="celular"
+      [ngClass]="{ 'is-invalid': submitted && hasError('celular') }"
+    />
 
     <div class="invalid-feedback">Digite um celular válido.</div>
   </div>
-  <div class="col-12 ">
-    <button class="btn btn-primary" type="button" (click)="onSubmit()">Enviar</button>
-    <button class="btn btn-danger" type="button" (click)="onCancel()">Cancelar</button>
+  <div class="col-sm-3">
+    <label for="rua" class="form-label">Rua</label>
+    <input
+      type="tel"
+      class="form-control"
+      placeholder="Digite a rua"
+      id="rua"
+      formControlName="rua"
+      [ngClass]="{ 'is-invalid': submitted && hasError('rua') }"
+    />
+  </div>
+  <div class="col-sm-3">
+    <label for="numero" class="form-label">Número</label>
+    <input
+      type="tel"
+      class="form-control"
+      placeholder="Digite o número"
+      id="numero"
+      formControlName="numero"
+      [ngClass]="{ 'is-invalid': submitted && hasError('numero') }"
+    />
+  </div>
+  <div class="col-sm-3">
+    <label for="bairro" class="form-label">Bairro</label>
+    <input
+      type="tel"
+      class="form-control"
+      placeholder="Digite o bairro"
+      id="bairro"
+      formControlName="bairro"
+      [ngClass]="{ 'is-invalid': submitted && hasError('bairro') }"
+    />
+  </div>
+  <div class="col-sm-3">
+    <label for="cidade" class="form-label">Cidade</label>
+    <input
+      type="tel"
+      class="form-control"
+      placeholder="Digite o cidade"
+      id="cidade"
+      formControlName="cidade"
+      [ngClass]="{ 'is-invalid': submitted && hasError('cidade') }"
+    />
+  </div>
+
+  <div class="col-sm-4">
+    <label for="cep" class="form-label">CEP</label>
+    <input
+      type="tel"
+      class="form-control"
+      placeholder="Digite o cep"
+      id="cep"
+      formControlName="cep"
+      [ngClass]="{ 'is-invalid': submitted && hasError('cep') }"
+    />
+  </div>
+  <div class="col-sm-4">
+    <label for="estado" class="form-label">Estado</label>
+    <input
+      type="tel"
+      class="form-control"
+      placeholder="Digite o estado"
+      id="estado"
+      formControlName="estado"
+      [ngClass]="{ 'is-invalid': submitted && hasError('estado') }"
+    />
+  </div>
+  <div class="col-sm-4">
+    <label for="pais" class="form-label">País</label>
+    <input
+      type="tel"
+      class="form-control"
+      placeholder="Digite o país"
+      id="pais"
+      formControlName="pais"
+      [ngClass]="{ 'is-invalid': submitted && hasError('pais') }"
+    />
+  </div>
+  <div class="col-12 mt-3 d-flex justify-content-center">
+    <button class="btn btn-primary m-1" type="button" (click)="onSubmit()">
+      <i class="bi bi-send"></i>
+      Enviar
+    </button>
+    <button
+      class="btn btn-danger m-1"
+      type="button"
+      routerLink="/"
+      routerLinkActive="active"
+      (click)="onCancel()"
+    >
+      <i class="bi bi-sign-stop"></i>
+      Cancelar
+    </button>
   </div>
 </form>

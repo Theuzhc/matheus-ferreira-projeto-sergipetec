@@ -35,19 +35,7 @@
         <td>{{ contribuinte.cpf }}</td>
         <td>{{ contribuinte.telefone }}</td>
         <td>{{ contribuinte.celular }}</td>
-        <td>
-          <!-- <li *ngFor="let endereco of contribuinte.enderecos">
-                        {{endereco.rua}} 
-                     </li> -->
-
-          <!-- "rua": "João Ribeiro",
-        "numero": "1003",
-        "bairro": "Cardoso",
-        "cidade": "Joinville",
-        "cep": "09530210",
-        "estado": "Santa Catarina",
-        "pais": "Brasil" -->
-        </td>
+        <td>{{ contribuinte.enderecos }}</td>
         <td class="p-0 text-center">
           <div class="p-0">
             <button
@@ -55,16 +43,16 @@
               type="button"
               class="btn btn-warning rounded"
               title="Alterar Contribuinte"
-              [routerLink]="['/editar/{{contribuinte.id}}']"
+              (click)="onEdit(contribuinte.id)"
             >
               <i class="bi bi-pencil"></i>
-              <!-- Falta editar e remover o usuário -->
             </button>
             <button
               mat-button
               type="button"
               class="btn btn-danger rounded"
               title="Remover Contribuinte"
+              (click)="onRemove(contribuinte)"
             >
               <i class="bi bi-trash"></i>
             </button>
@@ -75,3 +63,11 @@
     </table>
   </div>
 </div>
+
+<ng-template #removeModal>
+  <div class="modal-body text-center">
+    <p>Confirma a remoção do contribuinte?</p>
+    <button type="button" class="btn btn-primary">Sim</button>
+    <button type="button" class="btn btn-danger">Não</button>
+  </div>
+</ng-template>
