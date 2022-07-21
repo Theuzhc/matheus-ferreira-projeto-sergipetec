@@ -52,7 +52,7 @@
               type="button"
               class="btn btn-danger rounded"
               title="Remover Contribuinte"
-              (click)="onRemove(contribuinte)"
+              (click)="onRemove(contribuinte.id)"
             >
               <i class="bi bi-trash"></i>
             </button>
@@ -63,11 +63,3 @@
     </table>
   </div>
 </div>
-
-<ng-template #removeModal>
-  <div class="modal-body text-center">
-    <p>Confirma a remoção do contribuinte?</p>
-    <button type="button" class="btn btn-primary">Sim</button>
-    <button type="button" class="btn btn-danger">Não</button>
-  </div>
-</ng-template>
